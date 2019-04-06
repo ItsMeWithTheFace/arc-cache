@@ -1,0 +1,48 @@
+name:                arc-cache
+version:             0.1.0.0
+github:              "ItsMeWithTheFace/arc-cache"
+license:             BSD3
+author:              "Rakin Uddin"
+maintainer:          "rakinuddin97@gmail.com"
+copyright:           "2019 Rakin Uddin"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            An ARC Cache implementation
+# category:            Cacheing
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/arc-cache#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  arc-cache-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - arc-cache
+
+tests:
+  arc-cache-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - arc-cache
